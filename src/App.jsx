@@ -6,10 +6,12 @@ import search from "./images/search.png"
 import lists from "./images/list.png"
 import user from "./images/user.png"
 import testimg from "./images/test.jpg"
+import premium_info from "./images/premium_info.png"
 function App() {
   const[logoHover, setLogoHover]=useState(false)
   const[explorarMenu, setExplorarMenu]=useState(false)
   const[noticiasMenu, setNoticiasMenu]=useState(false)
+  const[premiumInfo, setPremiumInfo]=useState(false)
   return (
     <div className="content-app">
       <div className="header-container">
@@ -99,7 +101,7 @@ function App() {
             </div>
           </div>
           <div className="header-options">
-            <div className="header-premium header-button">
+            <div className="header-premium header-button" onMouseEnter={()=>setPremiumInfo(true)} onMouseLeave={()=>setPremiumInfo(false)}>
               <div className="button-elements">
                 <img alt="" src={crown} className="premium-crown"/>
                 <div className="premium-text">
@@ -107,6 +109,9 @@ function App() {
                   <p className="text-yellow">GRATIS</p>
                   <p className="text-white">PREMIUM</p>
                 </div>
+              </div>
+              <div className={`premium-info ${premiumInfo ? "state-open" : ""}`}>
+                <img src={premium_info} alt=""/>
               </div>
             </div>
             <div className="header-search header-button">

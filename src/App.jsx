@@ -14,6 +14,11 @@ function App() {
   const[noticiasMenu, setNoticiasMenu]=useState(false)
   const[premiumInfo, setPremiumInfo]=useState(false)
   const[userMenu, setUserMenu]=useState(false)
+  const handleCloseAll =()=>{
+    setExplorarMenu(false)
+    setNoticiasMenu(false)
+    setUserMenu(false)
+  }
   return (
     <div className="content-app">
       <div className="header-container">
@@ -146,8 +151,9 @@ function App() {
           </div>
         </nav>
       </div>
-      <div className={`app-body ${(explorarMenu||noticiasMenu||userMenu) ? "is-fade" : ""}`}>
-        <img src={testimg} alt=""></img>
+      <div className="app-body">
+        <div className={`app-body-overlay ${(explorarMenu||noticiasMenu||userMenu) ? "is-fade" : ""}`} onClick={handleCloseAll}/>
+        <a href="google.com"><img src={testimg} alt=""></img></a>
       </div>
     </div>
   );

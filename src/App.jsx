@@ -7,11 +7,13 @@ import lists from "./images/list.png"
 import user from "./images/user.png"
 import testimg from "./images/test.jpg"
 import premium_info from "./images/premium_info.png"
+import crown_black from "./images/crown_black.png"
 function App() {
   const[logoHover, setLogoHover]=useState(false)
   const[explorarMenu, setExplorarMenu]=useState(false)
   const[noticiasMenu, setNoticiasMenu]=useState(false)
   const[premiumInfo, setPremiumInfo]=useState(false)
+  const[userMenu, setUserMenu]=useState(false)
   return (
     <div className="content-app">
       <div className="header-container">
@@ -22,7 +24,7 @@ function App() {
           </div>
           <div className="header-menu">
             <div className={`explorar-button header-button ${explorarMenu ? "menu-opened" : ""}`}>
-              <div className="header-menu-text" onClick={()=>{setExplorarMenu(!explorarMenu); if(noticiasMenu){setNoticiasMenu(false)} }}>
+              <div className="header-menu-text" onClick={()=>{setExplorarMenu(!explorarMenu); if(noticiasMenu||userMenu){setNoticiasMenu(false); setUserMenu(false)} }}>
                 <p>Explorar</p>
                 <div className="dropdown-arrow"/>
               </div>
@@ -83,7 +85,7 @@ function App() {
                 <p>Juegos</p>
               </div>
             </div>
-            <div className={`explorar-button header-button ${noticiasMenu ? "menu-opened" : ""}`} onClick={()=>{setNoticiasMenu(!noticiasMenu); if(explorarMenu){setExplorarMenu(false)}}}>
+            <div className={`explorar-button header-button ${noticiasMenu ? "menu-opened" : ""}`} onClick={()=>{setNoticiasMenu(!noticiasMenu); if(explorarMenu||userMenu){setExplorarMenu(false); setUserMenu(false)}}}>
               <div className="header-menu-text">
                 <p>Noticias</p>
                 <div className="dropdown-arrow"/>
@@ -120,13 +122,31 @@ function App() {
             <div className="header-list header-button">
               <img alt="" src={lists} className="options-image"></img>
             </div>
-            <div className="header-profile header-button">
+            <div className="header-profile header-button" onClick={()=>{setUserMenu(!userMenu); if(explorarMenu||noticiasMenu){setExplorarMenu(false); setNoticiasMenu(false)}}}>
               <img alt="" src={user} className="options-image"></img>
+              <div className={`user-menu ${userMenu ? "state-open" : ""}`}>
+                <div className="user-menu-container">
+                  <li>
+                    <p className="user-menu-title">Crear cuenta</p>
+                    <p className="user-menu-desc">Suscríbete gratis o hazte premium</p>
+                  </li>
+                  <li>
+                    <p className="user-menu-title">Acceder</p>
+                    <p className="user-menu-desc">¿Ya eres miembro de Cruncyroll? Te damos la bienvenida</p>
+                  </li>
+                  <div className="button-wrapper">
+                    <button className="free-trial-button">
+                      <img src={crown_black} alt=""/>
+                      <p>PRUEBA GRATUITA DE 14 DÍAS</p>
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </nav>
       </div>
-      <div className={`app-body ${(explorarMenu||noticiasMenu) ? "is-fade" : ""}`}>
+      <div className={`app-body ${(explorarMenu||noticiasMenu||userMenu) ? "is-fade" : ""}`}>
         <img src={testimg} alt=""></img>
       </div>
     </div>

@@ -1,11 +1,12 @@
 import { useState } from "react"
 import logo_blanco from "./images/logo_blanco.png"
 import logo_normal from "./images/logo_normal.png"
+import ImageSlider from "./components/ImageSlider"
 import crown from "./images/crown.png"
 import search from "./images/search.png"
 import lists from "./images/list.png"
 import user from "./images/user.png"
-import testimg from "./images/test.jpg"
+//import testimg from "./images/test.png"
 import premium_info from "./images/premium_info.png"
 import crown_black from "./images/crown_black.png"
 function App() {
@@ -153,7 +154,9 @@ function App() {
       </div>
       <div className="app-body">
         <div className={`app-body-overlay ${(explorarMenu||noticiasMenu||userMenu) ? "is-fade" : ""}`} onClick={handleCloseAll}/>
-        <a href="google.com"><img src={testimg} alt=""></img></a>
+        <div className="app-body-content">
+          <ImageSlider/>
+        </div>
       </div>
     </div>
   );

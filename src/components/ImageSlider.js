@@ -18,12 +18,17 @@ const ImageSlider =()=>{
         }
     }
     const handleNext=()=>{
+        console.log("si")
         if(currentCount===5){
             setCurrentCount(0)
         }else{
             setCurrentCount(currentCount+1)
         }
     }
+    useEffect(()=>{
+        const interval = setInterval(handleNext,8000)
+        return () => clearInterval(interval);
+    })
     useEffect(()=>{
         setCurrentSlide(SliderData[currentCount])
         if(currentCount!==0){
@@ -39,13 +44,20 @@ const ImageSlider =()=>{
     },[currentCount])
     return(
         <section className="slider">
-            <div style={{backgroundImage: `url(${currentSlide.bgimage})`, minHeight:"460px", width: "100%", position: "absolute", display: "flex", justifyContent: "center", alignItems: "center",backgroundRepeat:"no-repeat",backgroundSize:"cover", overflow:"hidden"}}>
+            <div style={{backgroundImage: `url(${currentSlide.bgimage})`, minHeight:"460px", width: "100%", position: "absolute", display: "flex", justifyContent: "center", alignItems: "center",backgroundRepeat:"no-repeat",backgroundSize:"cover", overflow:"hidden", transition: "background .5s ease-out", transitionDelay:".4s"}}>
                 <div className="slider-items">
                     <div className={`slider-left-arrow ${isFirst ? "no-visible":""}`} onMouseEnter={()=>setLeftArrowHover(true)} onMouseLeave={()=>setLeftArrowHover(false)} onClick={handleLast}>
                         <img src={left_arrow} alt="" className={`${leftArrowHover ? "change-contrast" : ""}`}/>
                     </div>
-                    <div className="slider-image-display">
-                        <img src={currentSlide.image} alt=""/>
+                    <div className="slider-image-display-of">
+                        <div style={{margin: "40px", display: "flex", transition: "transform .3s", transform: `translateX(${currentCount*-1025}px)`}}>
+                            <img src={SliderData[0].image} alt="" />
+                            <img src={SliderData[1].image} alt="" />
+                            <img src={SliderData[2].image} alt="" />
+                            <img src={SliderData[3].image} alt="" />
+                            <img src={SliderData[4].image} alt="" />
+                            <img src={SliderData[5].image} alt="" />
+                        </div>
                     </div>
                     <div className={`slider-right-arrow ${isLast ? "no-visible":""}`} onMouseEnter={()=>setRightArrowHover(true)} onMouseLeave={()=>setRightArrowHover(false)} onClick={handleNext}>
                         <img src={rigth_arrow} alt="" className={`${rightArrowHover ? "change-contrast" : ""} ${isLast ? "no-visible":""}`}/>

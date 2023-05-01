@@ -1,0 +1,52 @@
+@font-face {
+    font-family: "Lato";
+    src: local("Lato-Regular"),
+      url("../fonts/Lato-Regular.ttf") format("truetype");
+  }
+.slider-info-card-principal{
+    min-width: 0;
+    max-width: 150px;
+    background-color: #23252b;
+    overflow: hidden;
+    padding: 0.6875rem 0.5rem;
+    position: relative;
+}
+.slider-info-card-principal:hover{
+    background-color: #393b41;
+    cursor: pointer;
+}
+.slider-info-card-secondary{
+    min-width: 0;
+    max-width: 150px;
+    background-color: #213944;
+    overflow: hidden;
+    padding: 0.6875rem 0.5rem;
+    position: relative;
+}
+.slider-info-card-secondary:hover{
+    background-color: #2f5161;
+    cursor: pointer;
+}
+.slider-card-text{
+    pointer-events: none;
+    color: #fff;
+    max-height: 2rem;
+    overflow: hidden;
+    text-align: left;
+    font-family: "Lato";
+    font-size: .75rem;
+    font-weight: 800;
+}
+
+.slider-card-indicator{
+    background-color: #ffffff80;
+    height: 0.1875rem;
+    left: 0;
+    top: 0;
+    position: absolute;
+    visibility: hidden;
+    width: 100%;
+}
+.slider-card-indicator.is-current{
+    visibility: visible;
+}

@@ -2,7 +2,8 @@ import React, {useEffect, useRef, useState } from "react";
 import './ImageSlider.scss'
 import rigth_arrow from "./slider_images/arrow_right.png"
 import left_arrow from "./slider_images/arrow_left.png"
-import { SliderData } from "./SliderData";
+import { SliderData } from "./SliderData"
+import SliderCard from "./SliderCard"
 const ImageSlider =()=>{
     const [currentSlide, setCurrentSlide] = useState(SliderData[0])
     const [currentCount, setCurrentCount] = useState(0)
@@ -94,9 +95,12 @@ const ImageSlider =()=>{
             </section>
             <div className="slider-cards">
                 <div className="slider-cards-wrap">
-                    <div className="test">Hola</div>
-                    <div className="test">Hola</div>
-                    <div className="test">Hola</div>
+                    <SliderCard text="MASHLE: MAGIA Y MÚSCULOS Nuevo Episodio" current={currentCount===0 ? true: false}/>
+                    <SliderCard text="KONOSUBA - An Explosion on This Wonderful World" current={currentCount===1 ? true: false}/>
+                    <SliderCard text="Dr. STONE T3 Nuevo Episodio" current={currentCount===2 ? true: false}/>
+                    <SliderCard text="Crunchyroll Music: ASIAN KUNG-FU GENERATION" current={currentCount===3 ? true: false}/>
+                    <SliderCard text="Suzume: ¡Boletos ya a la venta!" current={currentCount===4 ? true: false}/>
+                    <SliderCard text="The Quintessential Quintuplets Movie" current={currentCount===5 ? true: false}/>
                 </div>
             </div>
         </>

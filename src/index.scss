@@ -14,11 +14,12 @@ body {
   position: relative;
 }
 .header{
+  min-width: 61.25em;
   align-items: stretch;
   background-color: #23252b;
   display: flex;
   height: 3.75rem;
-  justify-content: space-between;
+  justify-content: center;
   left: 0;
   min-width: 20rem;
   position: fixed;
@@ -31,6 +32,8 @@ body {
   margin-left: 48px;
   margin-right: 20px;
   position: relative;
+  display: flex;
+  flex: 0 1 8.75rem;
 }
 .logo{
   height: 100%;
@@ -45,7 +48,7 @@ body {
 }
 .header-menu{
   display: flex;
-  flex: 0 1 830px;
+  flex: 0 1 65.625rem;
 }
 .header-button{
   height: 100%;
@@ -62,7 +65,7 @@ body {
       color: rgb(219, 219, 219);
       font-weight: 200;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 16px;
+      font-size: 15px;
     }
     .dropdown-arrow {
       height: 0;

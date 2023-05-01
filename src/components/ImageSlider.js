@@ -69,28 +69,37 @@ const ImageSlider =()=>{
         setIsPaused(false)
     }
     return(
-        <section className="slider">
-            <div style={{backgroundImage: `url(${currentSlide.bgimage})`, minHeight:"460px", width: "100%", position: "absolute", display: "flex", justifyContent: "center", alignItems: "center",backgroundRepeat:"no-repeat",backgroundSize:"cover", overflow:"hidden", transition: "background .5s ease-out", transitionDelay:".4s"}}>
-                <div className="slider-items">
-                    <div className={`slider-left-arrow ${isFirst ? "no-visible":""}`} onMouseEnter={()=>setLeftArrowHover(true)} onMouseLeave={()=>setLeftArrowHover(false)} onClick={()=>{handleLast(); setTimeElapsed(0)}}>
-                        <img src={left_arrow} alt="" className={`${leftArrowHover ? "change-contrast" : ""}`}/>
-                    </div>
-                    <div className="slider-image-display-of">
-                        <div style={{margin: "40px", display: "flex", transition: "transform .3s", transform: `translateX(${currentCount*-1025}px)`}} onMouseEnter={handleStopInterval} onMouseLeave={handleStartInterval}>
-                            <img src={SliderData[0].image} alt="" />
-                            <img src={SliderData[1].image} alt="" />
-                            <img src={SliderData[2].image} alt="" />
-                            <img src={SliderData[3].image} alt="" />
-                            <img src={SliderData[4].image} alt="" />
-                            <img src={SliderData[5].image} alt="" />
+        <>
+            <section className="slider">
+                <div style={{backgroundImage: `url(${currentSlide.bgimage})`, minHeight:"460px", width: "100%", position: "absolute", display: "flex", justifyContent: "center", alignItems: "center",backgroundRepeat:"no-repeat",backgroundSize:"cover", overflow:"hidden", transition: "background .5s ease-out", transitionDelay:".4s"}}>
+                    <div className="slider-items">
+                        <div className={`slider-left-arrow ${isFirst ? "no-visible":""}`} onMouseEnter={()=>setLeftArrowHover(true)} onMouseLeave={()=>setLeftArrowHover(false)} onClick={()=>{handleLast(); setTimeElapsed(0)}}>
+                            <img src={left_arrow} alt="" className={`${leftArrowHover ? "change-contrast" : ""}`}/>
+                        </div>
+                        <div className="slider-image-display-of">
+                            <div style={{margin: "40px", display: "flex", transition: "transform .3s", transform: `translateX(${currentCount*-1025}px)`}} onMouseEnter={handleStopInterval} onMouseLeave={handleStartInterval}>
+                                <img src={SliderData[0].image} alt="" />
+                                <img src={SliderData[1].image} alt="" />
+                                <img src={SliderData[2].image} alt="" />
+                                <img src={SliderData[3].image} alt="" />
+                                <img src={SliderData[4].image} alt="" />
+                                <img src={SliderData[5].image} alt="" />
+                            </div>
+                        </div>
+                        <div className={`slider-right-arrow ${isLast ? "no-visible":""}`} onMouseEnter={()=>setRightArrowHover(true)} onMouseLeave={()=>setRightArrowHover(false)} onClick={()=>{handleNext(); setTimeElapsed(0)}}>
+                            <img src={rigth_arrow} alt="" className={`${rightArrowHover ? "change-contrast" : ""} ${isLast ? "no-visible":""}`}/>
                         </div>
                     </div>
-                    <div className={`slider-right-arrow ${isLast ? "no-visible":""}`} onMouseEnter={()=>setRightArrowHover(true)} onMouseLeave={()=>setRightArrowHover(false)} onClick={()=>{handleNext(); setTimeElapsed(0)}}>
-                        <img src={rigth_arrow} alt="" className={`${rightArrowHover ? "change-contrast" : ""} ${isLast ? "no-visible":""}`}/>
-                    </div>
+                </div>
+            </section>
+            <div className="slider-cards">
+                <div className="slider-cards-wrap">
+                    <div className="test">Hola</div>
+                    <div className="test">Hola</div>
+                    <div className="test">Hola</div>
                 </div>
             </div>
-        </section>
+        </>
     )
 }
 

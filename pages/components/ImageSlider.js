@@ -1,11 +1,13 @@
 import React, {useEffect, useRef, useState } from "react";
-import './ImageSlider.scss'
+import Image from "next/image";
 import rigth_arrow from "./slider_images/arrow_right.png"
 import left_arrow from "./slider_images/arrow_left.png"
 import { SliderData } from "./SliderData"
 import SliderCard from "./SliderCard"
+import { Transition } from "react-transition-group";
 const ImageSlider =()=>{
     const [currentSlide, setCurrentSlide] = useState(SliderData[0])
+    const [nextSlide, setNextSlide] = useState(SliderData[1])
     const [currentCount, setCurrentCount] = useState(0)
     const [leftArrowHover, setLeftArrowHover] = useState(false)
     const [rightArrowHover, setRightArrowHover] = useState(false)
@@ -14,6 +16,7 @@ const ImageSlider =()=>{
     const [timeElapsed, setTimeElapsed]=useState(0)
     const [isPaused, setIsPaused]=useState(false)
     const [allowNext, setAllowNext]=useState(false)
+    const [transition, setTransition]=useState(false)
     const handleLast=()=>{
         if(currentCount===0){
             setCurrentCount(5)
@@ -52,7 +55,14 @@ const ImageSlider =()=>{
     },[timeElapsed])
     useEffect(()=>{
         setTimeElapsed(0)
-        setCurrentSlide(SliderData[currentCount])
+        setTransition(false)
+        setTimeout(() => {
+            setTimeout(() => {
+                setCurrentSlide(SliderData[currentCount])
+            }, 1000);
+            setNextSlide(SliderData[currentCount])
+            setTransition(true)
+        }, 800);
         if(currentCount!==0){
             setIsFirst(false)
         }else{
@@ -64,6 +74,9 @@ const ImageSlider =()=>{
             setIsLast(true)
         }
     },[currentCount])
+    useEffect(()=>{
+        console.log(window.innerWidth)
+    })
     const handleStopInterval =()=>{
         setIsPaused(true)
     }
@@ -73,23 +86,25 @@ const ImageSlider =()=>{
     return(
         <>
             <section className="slider">
-                <div style={{backgroundImage: `url(${currentSlide.bgimage})`, minHeight:"460px", width: "100%", position: "absolute", display: "flex", justifyContent: "center", alignItems: "center",backgroundRepeat:"no-repeat",backgroundSize:"cover", overflow:"hidden", transition: "background .5s ease-out", transitionDelay:".4s"}}>
+                <div style={{minHeight:"460px", width: "100%", position: "absolute", display: "flex", justifyContent: "center", alignItems: "center", overflow:"hidden"}}>
+                    <Image src={currentSlide.bgimage} style={{width:"100%", minHeight:"460px", position: "absolute", top:"-108px", opacity: `${transition?"0":"1"}`, transition: "opacity .5s"}} alt=""/>
+                    <Image src={nextSlide.bgimage} style={{width:"100%", minHeight:"460px", position: "absolute", top:"-105px", zIndex:"-2"}} alt=""/>
                     <div className="slider-items">
                         <div className={`slider-left-arrow ${isFirst ? "no-visible":""}`} onMouseEnter={()=>setLeftArrowHover(true)} onMouseLeave={()=>setLeftArrowHover(false)} onClick={()=>{handleLast(); setTimeElapsed(0)}}>
-                            <img src={left_arrow} alt="" className={`${leftArrowHover ? "change-contrast" : ""}`}/>
+                            <Image src={left_arrow} alt="" className={`${leftArrowHover ? "change-contrast" : ""}`}/>
                         </div>
                         <div className="slider-image-display-of">
                             <div style={{margin: "40px", display: "flex", transition: "transform .3s", transform: `translateX(${currentCount*-1025}px)`}} onMouseEnter={handleStopInterval} onMouseLeave={handleStartInterval}>
-                                <img src={SliderData[0].image} alt="" />
-                                <img src={SliderData[1].image} alt="" />
-                                <img src={SliderData[2].image} alt="" />
-                                <img src={SliderData[3].image} alt="" />
-                                <img src={SliderData[4].image} alt="" />
-                                <img src={SliderData[5].image} alt="" />
+                                <Image src={SliderData[0].image} alt="" />
+                                <Image src={SliderData[1].image} alt="" />
+                                <Image src={SliderData[2].image} alt="" />
+                                <Image src={SliderData[3].image} alt="" />
+                                <Image src={SliderData[4].image} alt="" />
+                                <Image src={SliderData[5].image} alt="" />
                             </div>
                         </div>
                         <div className={`slider-right-arrow ${isLast ? "no-visible":""}`} onMouseEnter={()=>setRightArrowHover(true)} onMouseLeave={()=>setRightArrowHover(false)} onClick={()=>{handleNext(); setTimeElapsed(0)}}>
-                            <img src={rigth_arrow} alt="" className={`${rightArrowHover ? "change-contrast" : ""} ${isLast ? "no-visible":""}`}/>
+                            <Image src={rigth_arrow} alt="" className={`${rightArrowHover ? "change-contrast" : ""} ${isLast ? "no-visible":""}`}/>
                         </div>
                     </div>
                 </div>

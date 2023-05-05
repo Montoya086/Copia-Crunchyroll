@@ -34,6 +34,7 @@ body {
 .header-logo{
   margin-top: 2px;
   height: 95%;
+  min-width: 8.5rem;
   margin-left: 48px;
   margin-right: 20px;
   position: relative;
@@ -45,6 +46,7 @@ body {
   position: absolute;
   opacity: 0;
   transition: opacity .2s;
+  width: 100%;
 }
 
 .logo-top{
@@ -272,8 +274,9 @@ body {
   visibility: hidden;
   transition: transform .1s,opacity .1s cubic-bezier(0,0,.25,1),visibility 0s linear .1s;
   padding: 20px;
-  img{
+  .image{
     width: 350px;
+    height: 150px;
   }
 }
 .premium-info.state-open{
@@ -334,8 +337,9 @@ body {
         justify-content: center;
         margin-left: 20px;
         width: 90%;
-        img{
+        .image{
           height: 50%;
+          width: 25px;
         }
         p{
           font-weight: bolder;
@@ -375,4 +379,10 @@ body {
   visibility: visible;
   background-color: #23252bcc;
   filter: brightness(0.4);
+}
+.app-footer{
+  padding-top: 2rem;
+}
+.app-footer-wrapper{
+  
 }

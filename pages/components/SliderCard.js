@@ -1,5 +1,4 @@
 import React from "react"
-import './SliderCard.scss'
 
 const SliderCard =({text, current, id, setCurrent, currentTime, handleStop, handleStart})=>{
     return(

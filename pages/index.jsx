@@ -2,14 +2,24 @@ import { useState } from "react"
 import logo_blanco from "./images/logo_blanco.png"
 import logo_normal from "./images/logo_normal.png"
 import ImageSlider from "./components/ImageSlider"
+import Image from "next/image"
 import crown from "./images/crown.png"
 import search from "./images/search.png"
 import lists from "./images/list.png"
 import user from "./images/user.png"
-//import testimg from "./images/test.png"
+//import testImage from "./images/test.png"
 import premium_info from "./images/premium_info.png"
 import crown_black from "./images/crown_black.png"
-function App() {
+
+export async function getStaticProps(){
+    return{
+        props:{
+
+        }
+    }
+}
+
+function Index() {
   const[logoHover, setLogoHover]=useState(false)
   const[explorarMenu, setExplorarMenu]=useState(false)
   const[noticiasMenu, setNoticiasMenu]=useState(false)
@@ -25,8 +35,8 @@ function App() {
       <div className="header-container">
         <nav className="header">
           <div className="header-logo" onMouseEnter={()=>setLogoHover(true)} onMouseLeave={()=>setLogoHover(false)}>
-            <img alt="" src={logo_normal} className={`logo ${logoHover ? "" : "logo-top"}`}/>
-            <img alt="" src={logo_blanco} className={`logo ${logoHover ? "logo-top" : ""}`}/>
+            <Image alt="" src={logo_normal} className={`logo ${logoHover ? "" : "logo-top"}`}/>
+            <Image alt="" src={logo_blanco} className={`logo ${logoHover ? "logo-top" : ""}`}/>
           </div>
           <div className="header-menu">
             <div className={`explorar-button header-button ${explorarMenu ? "menu-opened" : ""}`}>
@@ -111,7 +121,7 @@ function App() {
           <div className="header-options">
             <div className="header-premium header-button" onMouseEnter={()=>setPremiumInfo(true)} onMouseLeave={()=>setPremiumInfo(false)}>
               <div className="button-elements">
-                <img alt="" src={crown} className="premium-crown"/>
+                <Image alt="" src={crown} className="premium-crown"/>
                 <div className="premium-text">
                   <p className="text-yellow">PROBAR</p>
                   <p className="text-yellow">GRATIS</p>
@@ -119,17 +129,17 @@ function App() {
                 </div>
               </div>
               <div className={`premium-info ${premiumInfo ? "state-open" : ""}`}>
-                <img src={premium_info} alt=""/>
+                <Image src={premium_info} alt="" className="image"/>
               </div>
             </div>
             <div className="header-search header-button">
-              <img alt="" src={search} className="options-image"></img>
+              <Image alt="" src={search} className="options-image"></Image>
             </div>
             <div className="header-list header-button">
-              <img alt="" src={lists} className="options-image"></img>
+              <Image alt="" src={lists} className="options-image"></Image>
             </div>
             <div className="header-profile header-button" onClick={()=>{setUserMenu(!userMenu); if(explorarMenu||noticiasMenu){setExplorarMenu(false); setNoticiasMenu(false)}}}>
-              <img alt="" src={user} className="options-image"></img>
+              <Image alt="" src={user} className="options-image"></Image>
               <div className={`user-menu ${userMenu ? "state-open" : ""}`}>
                 <div className="user-menu-container">
                   <li>
@@ -142,7 +152,7 @@ function App() {
                   </li>
                   <div className="button-wrapper">
                     <button className="free-trial-button">
-                      <img src={crown_black} alt=""/>
+                      <Image src={crown_black} alt="" className="image"/>
                       <p>PRUEBA GRATUITA DE 14 DÍAS</p>
                     </button>
                   </div>
@@ -158,8 +168,13 @@ function App() {
           <ImageSlider/>
         </div>
       </div>
+      <div className="app-footer">
+        <div className="app-footer-wrapper">
+          
+        </div>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Index;

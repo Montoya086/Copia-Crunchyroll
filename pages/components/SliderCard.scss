@@ -4,8 +4,7 @@
       url("../fonts/Lato-Regular.ttf") format("truetype");
   }
 .slider-info-card-principal{
-    min-width: 0;
-    max-width: 150px;
+    width: 150px;
     background-color: #23252b;
     overflow: hidden;
     padding: 0.6875rem 0.5rem;
@@ -16,8 +15,7 @@
     cursor: pointer;
 }
 .slider-info-card-secondary{
-    min-width: 0;
-    max-width: 150px;
+    width: 150px;
     background-color: #213944;
     overflow: hidden;
     padding: 0.6875rem 0.5rem;
@@ -35,7 +33,7 @@
     text-align: left;
     font-family: "Lato";
     font-size: .75rem;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .slider-card-indicator{

@@ -12,14 +12,57 @@ import premium_info from "./images/premium_info.png"
 import crown_black from "./images/crown_black.png"
 
 export async function getStaticProps(){
+    const mainPageData = [
+        {
+            explorar:"Explorar", 
+            popular:"Popular",
+            novedades:"Novedades", 
+            alfabetico: "Alfabético", 
+            temdesim:"Temporada de Simulcasts",
+            caldelans:"Calendario de lanzamientos",
+            vidycons:"Videos musicales y conciertos",
+            generos:"GÉNEROS",
+            accion:"Acción",
+            aventura:"Aventura",
+            comedia:"Comedia",
+            drama:"Drama",
+            fantasia:"Fantasia",
+            musical:"Musical",
+            romance:"Romance",
+            cf:"Ciencia Ficción",
+            seinen:"Seinen",
+            shoujo:"Shoujo",
+            shounen:"Shounen",
+            recdevid:"Recuentos de la Vida",
+            deportes:"Deportes",
+            sobrenat:"Sobrenatural",
+            thriller:"Thriller",
+            manga:"Manga",
+            juegos:"Juegos",
+            noticias:"Noticias",
+            todlasnot:"Todas las noticias",
+            animeaw:"Anime Awards",
+            crunexp:"Crunchyroll Expo",
+            animemovni:"Anime Movie Night",
+            pprobar:"PROBAR",
+            pgratis:"GRATIS",
+            ppremium:"PREMIUM",
+            createacc:"Crear cuenta",
+            susgratprem:"Suscríbete gratis o hazte premium",
+            acceder:"Acceder",
+            yamiemb:"¿Ya eres miembro de Cruncyroll? Te damos la bienvenida",
+            pruebgrat:"PRUEBA GRATUITA DE 14 DÍAS"
+
+        }
+    ]
     return{
         props:{
-
+            mainPageData
         }
     }
 }
 
-function Index() {
+function Index({mainPageData}) {
   const[logoHover, setLogoHover]=useState(false)
   const[explorarMenu, setExplorarMenu]=useState(false)
   const[noticiasMenu, setNoticiasMenu]=useState(false)
@@ -41,7 +84,7 @@ function Index() {
           <div className="header-menu">
             <div className={`explorar-button header-button ${explorarMenu ? "menu-opened" : ""}`}>
               <div className="header-menu-text" onClick={()=>{setExplorarMenu(!explorarMenu); if(noticiasMenu||userMenu){setNoticiasMenu(false); setUserMenu(false)} }}>
-                <p>Explorar</p>
+                <p>{mainPageData&&(mainPageData[0].explorar)}</p>
                 <div className="dropdown-arrow"/>
               </div>
               <div className={`explorar-menu-dropdown ${explorarMenu ? "state-open" : ""}`}>
@@ -49,43 +92,43 @@ function Index() {
                   <div className="menu-selection">
                     <ul className="menu-list">
                       <li className="list-item">
-                        <p>Popular</p>
+                        <p>{mainPageData&&(mainPageData[0].popular)}</p>
                       </li>
                       <li className="list-item">
-                        <p>Novedades</p>
+                        <p>{mainPageData&&(mainPageData[0].novedades)}</p>
                       </li>
                       <li className="list-item">
-                        <p>Alfabético</p>
+                        <p>{mainPageData&&(mainPageData[0].alfabetico)}</p>
                       </li>
                       <li className="list-item">
-                        <p>Temporada de Simulcasts</p>
+                        <p>{mainPageData&&(mainPageData[0].temdesim)}</p>
                       </li>
                       <li className="list-item">
-                        <p>Calendario de lanzamientos</p>
+                        <p>{mainPageData&&(mainPageData[0].caldelans)}</p>
                       </li>
                       <li className="list-item">
-                        <p>Videos musicales y conciertos</p>
+                        <p>{mainPageData&&(mainPageData[0].vidycons)}</p>
                       </li>
                     </ul>
                   </div>
                   <div className="genero-selection">
-                    <p className="genero-title">GÉNEROS</p>
+                    <p className="genero-title">{mainPageData&&(mainPageData[0].generos)}</p>
                     <div className="genero-elements">
-                      <li><p>Acción</p></li>
-                      <li><p>Aventura</p></li>
-                      <li><p>Comedia</p></li>
-                      <li><p>Drama</p></li>
-                      <li><p>Fantasia</p></li>
-                      <li><p>Musical</p></li>
-                      <li><p>Romance</p></li>
-                      <li><p>Ciencia Ficción</p></li>
-                      <li><p>Seinen</p></li>
-                      <li><p>Shoujo</p></li>
-                      <li><p>Shounen</p></li>
-                      <li><p>Recuentos de la Vida</p></li>
-                      <li><p>Deportes</p></li>
-                      <li><p>Sobrenatural</p></li>
-                      <li><p>Thriller</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].accion)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].aventura)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].comedia)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].drama)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].fantasia)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].musical)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].romance)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].cf)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].seinen)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].shoujo)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].shounen)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].recdevid)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].deportes)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].sobrenat)}</p></li>
+                      <li><p>{mainPageData&&(mainPageData[0].thriller)}</p></li>
                     </div>
                   </div>
                 </div>
@@ -93,26 +136,26 @@ function Index() {
             </div>
             <div className="manga-button header-button">
               <div className="header-menu-text">
-                <p>Manga</p>
+                <p>{mainPageData&&(mainPageData[0].manga)}</p>
               </div>
             </div>
             <div className="juegos-button header-button">
               <div className="header-menu-text">
-                <p>Juegos</p>
+                <p>{mainPageData&&(mainPageData[0].juegos)}</p>
               </div>
             </div>
             <div className={`explorar-button header-button ${noticiasMenu ? "menu-opened" : ""}`} onClick={()=>{setNoticiasMenu(!noticiasMenu); if(explorarMenu||userMenu){setExplorarMenu(false); setUserMenu(false)}}}>
               <div className="header-menu-text">
-                <p>Noticias</p>
+                <p>{mainPageData&&(mainPageData[0].noticias)}</p>
                 <div className="dropdown-arrow"/>
               </div>
               <div className={`noticias-menu-dropdown ${noticiasMenu ? "state-open" : ""}`}>
                 <div className="noticias-list">
                   <ul>
-                    <li><p>Todas las noticias</p></li>
-                    <li><p>Anime Awards</p></li>
-                    <li><p>Crunchyroll Expo</p></li>
-                    <li><p>Anime Movie Night</p></li>
+                    <li><p>{mainPageData&&(mainPageData[0].todlasnot)}</p></li>
+                    <li><p>{mainPageData&&(mainPageData[0].animeaw)}</p></li>
+                    <li><p>{mainPageData&&(mainPageData[0].crunexp)}</p></li>
+                    <li><p>{mainPageData&&(mainPageData[0].animemovni)}</p></li>
                   </ul>
                 </div>
               </div>
@@ -123,9 +166,9 @@ function Index() {
               <div className="button-elements">
                 <Image alt="" src={crown} className="premium-crown"/>
                 <div className="premium-text">
-                  <p className="text-yellow">PROBAR</p>
-                  <p className="text-yellow">GRATIS</p>
-                  <p className="text-white">PREMIUM</p>
+                  <p className="text-yellow">{mainPageData&&(mainPageData[0].pprobar)}</p>
+                  <p className="text-yellow">{mainPageData&&(mainPageData[0].pgratis)}</p>
+                  <p className="text-white">{mainPageData&&(mainPageData[0].ppremium)}</p>
                 </div>
               </div>
               <div className={`premium-info ${premiumInfo ? "state-open" : ""}`}>
@@ -143,17 +186,17 @@ function Index() {
               <div className={`user-menu ${userMenu ? "state-open" : ""}`}>
                 <div className="user-menu-container">
                   <li>
-                    <p className="user-menu-title">Crear cuenta</p>
-                    <p className="user-menu-desc">Suscríbete gratis o hazte premium</p>
+                    <p className="user-menu-title">{mainPageData&&(mainPageData[0].createacc)}</p>
+                    <p className="user-menu-desc">{mainPageData&&(mainPageData[0].susgratprem)}</p>
                   </li>
                   <li>
-                    <p className="user-menu-title">Acceder</p>
-                    <p className="user-menu-desc">¿Ya eres miembro de Cruncyroll? Te damos la bienvenida</p>
+                    <p className="user-menu-title">{mainPageData&&(mainPageData[0].acceder)}</p>
+                    <p className="user-menu-desc">{mainPageData&&(mainPageData[0].yamiemb)}</p>
                   </li>
                   <div className="button-wrapper">
                     <button className="free-trial-button">
                       <Image src={crown_black} alt="" className="image"/>
-                      <p>PRUEBA GRATUITA DE 14 DÍAS</p>
+                      <p>{mainPageData&&(mainPageData[0].pruebgrat)}</p>
                     </button>
                   </div>
                 </div>

@@ -25,14 +25,14 @@ export default function Footer({fd}){
             <div className="footer-top-wrapper">
                 <div className="footer-sections">
                     <div className="footer-section navigation">
-                        <h4>{fd.t1}</h4>
+                        <h4>{fd&&(fd.t1)}</h4>
                         <ul>
-                            <li><p>{fd.s1d1}</p></li>
-                            <li><p>{fd.s1d2}</p></li>
-                            <li><p>{fd.s1d3}</p></li>
-                            <li><p>{fd.s1d4}</p></li>
-                            <li><p>{fd.s1d5}</p></li>
-                            <li><p>{fd.s1d6}</p></li>
+                            <li><p>{fd&&(fd.s1d1)}</p></li>
+                            <li><p>{fd&&(fd.s1d2)}</p></li>
+                            <li><p>{fd&&(fd.s1d3)}</p></li>
+                            <li><p>{fd&&(fd.s1d4)}</p></li>
+                            <li><p>{fd&&(fd.s1d5)}</p></li>
+                            <li><p>{fd&&(fd.s1d6)}</p></li>
                         </ul>
                     </div>
                     <div className="footer-section connect">

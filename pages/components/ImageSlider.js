@@ -4,8 +4,7 @@ import rigth_arrow from "./slider_images/arrow_right.png"
 import left_arrow from "./slider_images/arrow_left.png"
 import { SliderData } from "./SliderData"
 import SliderCard from "./SliderCard"
-import { Transition } from "react-transition-group";
-const ImageSlider =()=>{
+const ImageSlider =({imageSliderData})=>{
     const [currentSlide, setCurrentSlide] = useState(SliderData[0])
     const [nextSlide, setNextSlide] = useState(SliderData[1])
     const [currentCount, setCurrentCount] = useState(0)
@@ -75,7 +74,7 @@ const ImageSlider =()=>{
         }
     },[currentCount])
     useEffect(()=>{
-        console.log(window.innerWidth)
+        //console.log(window.innerWidth)
     })
     const handleStopInterval =()=>{
         setIsPaused(true)
@@ -111,12 +110,12 @@ const ImageSlider =()=>{
             </section>
             <div className="slider-cards">
                 <div className="slider-cards-wrap">
-                    <SliderCard text="MASHLE: MAGIA Y MÚSCULOS Nuevo Episodio" current={currentCount===0 ? true: false} id={0} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
-                    <SliderCard text="KONOSUBA - An Explosion on This Wonderful World" current={currentCount===1 ? true: false} id={1} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
-                    <SliderCard text="Dr. STONE T3 Nuevo Episodio" current={currentCount===2 ? true: false} id={2} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
-                    <SliderCard text="Crunchyroll Music: ASIAN KUNG-FU GENERATION" current={currentCount===3 ? true: false} id={3} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
-                    <SliderCard text="Suzume: ¡Boletos ya a la venta!" current={currentCount===4 ? true: false} id={4} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
-                    <SliderCard text="The Quintessential Quintuplets Movie" current={currentCount===5 ? true: false} id={5} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
+                    <SliderCard text={imageSliderData.card1} current={currentCount===0 ? true: false} id={0} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
+                    <SliderCard text={imageSliderData.card2} current={currentCount===1 ? true: false} id={1} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
+                    <SliderCard text={imageSliderData.card3} current={currentCount===2 ? true: false} id={2} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
+                    <SliderCard text={imageSliderData.card4} current={currentCount===3 ? true: false} id={3} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
+                    <SliderCard text={imageSliderData.card5} current={currentCount===4 ? true: false} id={4} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
+                    <SliderCard text={imageSliderData.card6} current={currentCount===5 ? true: false} id={5} setCurrent={setCurrentCount} currentTime={timeElapsed} handleStop={handleStopInterval} handleStart={handleStartInterval}/>
                 </div>
             </div>
         </>

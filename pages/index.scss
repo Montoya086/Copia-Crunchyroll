@@ -81,6 +81,7 @@ body {
       border-right: 6px solid transparent;
       border-top: 6px solid rgb(219, 219, 219);
       margin-left: 8px;
+      margin-top: 7px;
     }
   }
 }
@@ -382,7 +383,15 @@ body {
 }
 .app-footer{
   padding-top: 2rem;
+  background: #000 linear-gradient(180deg,#0000,#213944);
+  position: relative;
 }
 .app-footer-wrapper{
-  
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Lato";
 }

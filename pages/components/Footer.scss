@@ -1,0 +1,174 @@
+.footer-top-wrapper{
+    padding-bottom: 1.5rem;
+    border-bottom: .0625rem solid #4a4e58;
+}
+.footer-sections{
+    margin: 0 -.9375rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-section{
+    flex: 0 0 25%;
+    display: block;
+    padding: 0 .9375rem;
+    min-width: 240px;
+    max-width: 240px;
+    h4{
+        color: white;
+        padding-right: 1.25rem;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li{
+            font-family: "Lato";
+            color: #a0a0a0;
+            display: flex;
+            align-items: center;
+            p{
+                font-size: .875rem;
+                font-weight: 500;
+                margin-top: 0;
+            }
+            .img_yt{
+                width: 20px;
+                height: 14px;
+                margin-bottom: 15px;
+                margin-right: 10px;
+            }
+            .img_fb{
+                width: 18px;
+                height: 18px;
+                margin-bottom: 15px;
+                margin-right: 12px;
+            }
+            .img_crown{
+                width: 23px;
+                height: 18px;
+                margin-bottom: 15px;
+                margin-right: 5pxpx;
+            }
+        }
+        li:hover{
+            color: white;
+            cursor: pointer;
+            text-decoration-line: underline;
+        }
+        .premium{
+            color: #fab818;
+        }
+        .premium:hover{
+            color: white;
+        }
+    }
+}
+.footer-bottom-wrapper{
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    width: 1050px;
+    overflow: auto;
+    p{
+        flex: 1;
+        color: #a0a0a0;
+    }
+    .language-selector{
+        .content-wrapper{
+            flex: 0 0 auto;
+            float: right;
+            width: 115px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: row;
+            cursor: pointer;
+            .dropdown-arrow{
+                height: 0;
+                width: 0;
+                border-left: 6px solid transparent;
+                border-right: 6px solid transparent;
+                border-top: 6px solid rgb(219, 219, 219);
+                margin-right: 5px;
+            }
+            span{
+                font-size: .875rem;
+                color: #a0a0a0;
+                margin-left: 5px;
+                font-weight: 900;
+                
+            }
+        }
+        .content-wrapper.is-open{
+            background-color: #23252b;
+            color: white;
+        }
+        .content-wrapper:hover{
+            span{
+                color: white;
+            }
+            background-color: #23252b;
+        }
+        .language-dropdown{
+            max-height: 28.75rem;
+            min-width: 200px;
+            position: absolute;
+            top:36px;
+            right: 206px;
+            z-index: 100;
+            background-color: #23252b;
+            visibility: hidden;
+            .dropdown-scrollbar{
+                flex: 1;
+                overflow-y: scroll;
+                max-height: 25.75rem;
+                display: block;
+                font-weight: 400;
+                margin-right: 4px;
+                margin-top: 4px;
+                margin-bottom: 4px;
+                .dropdown-content{
+                    position: relative;
+                    min-height: 100%;
+                    display: block;
+                    margin-top: 10px;
+                    margin-bottom: 10px;
+                    .language-option{
+                        padding-top:10px;
+                        padding-bottom:10px;
+                        padding-left: 20px;
+                        padding-right: 30px;
+                        font-weight: 400;
+                        font-size: .875rem;
+                        color: #a0a0a0;
+                    }
+                    .language-option.esp{
+                        color: white;
+                    }
+                    .language-option:hover{
+                        color: white;
+                        cursor: pointer;
+                    }
+                }
+                &::-webkit-scrollbar-track {
+                    background-color: transparent;
+                }
+                &::-webkit-scrollbar {
+                    width: 6px;
+                }
+                &::-webkit-scrollbar-thumb {
+                    background-color: #59595b;
+                }
+            }
+        }
+        .is-visible{
+            visibility: visible;
+        }
+    }
+}

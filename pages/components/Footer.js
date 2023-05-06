@@ -36,121 +36,121 @@ export default function Footer({fd}){
                         </ul>
                     </div>
                     <div className="footer-section connect">
-                        <h4>Conecta con nosotros</h4>
+                        <h4>{fd&&(fd.t2)}</h4>
                         <ul>
                             <li onMouseEnter={()=>setYtHover(true)} onMouseLeave={()=>setYtHover(false)}>
                             <Image className="img_yt" src={ytHover?yt_white:yt_gray} alt=""/>
-                            <p>Youtube</p>
+                            <p>{fd&&(fd.s2d1)}</p>
                             </li>
                             <li onMouseEnter={()=>setFbHover(true)} onMouseLeave={()=>setFbHover(false)}>
                             <Image className="img_fb" src={fbHover?fb_white:fb_gray} alt=""/>
-                            <p>Facebook</p>
+                            <p>{fd&&(fd.s2d2)}</p>
                             </li>
                             <li onMouseEnter={()=>setTwHover(true)} onMouseLeave={()=>setTwHover(false)}>
                             <Image className="img_fb" src={twHover?tw_white:tw_gray} alt=""/>
-                            <p>Twitter</p>
+                            <p>{fd&&(fd.s2d3)}</p>
                             </li>
                             <li onMouseEnter={()=>setIgHover(true)} onMouseLeave={()=>setIgHover(false)}>
                             <Image className="img_fb" src={igHover?ig_white:ig_gray} alt=""/>
-                            <p>Instagram</p>
+                            <p>{fd&&(fd.s2d4)}</p>
                             </li>
                             <li onMouseEnter={()=>setTtHover(true)} onMouseLeave={()=>setTtHover(false)}>
                             <Image className="img_fb" src={ttHover?tt_white:tt_gray} alt=""/>
-                            <p>TikTok</p>
+                            <p>{fd&&(fd.s2d5)}</p>
                             </li>
                         </ul>
                     </div>
                     <div className="footer-section cruncyroll">
-                        <h4>Crunchyroll</h4>
+                        <h4>{fd&&(fd.t3)}</h4>
                         <ul>
                             <li className="premium" onMouseEnter={()=>setPremiumHover(true)} onMouseLeave={()=>setPremiumHover(false)}>
                                 <Image src={premiumHover?crown_white:crown} className="img_crown" alt=""/>
-                                <p>Comienza tu Prueba Gratuita</p>
+                                <p>{fd&&(fd.s3d1)}</p>
                             </li>
                             <li>
-                                <p>Acerca</p>
+                                <p>{fd&&(fd.s3d2)}</p>
                             </li>
                             <li>
-                                <p>Ayuda/FAQ</p>
+                                <p>{fd&&(fd.s3d3)}</p>
                             </li>
                             <li>
-                                <p>Términos de Uso</p>
+                                <p>{fd&&(fd.s3d4)}</p>
                             </li>
                             <li>
-                                <p>Política de Privacidad</p>
+                                <p>{fd&&(fd.s3d5)}</p>
                             </li>
                             <li>
-                                <p>Herramienta de aceptación de cookies</p>
+                                <p>{fd&&(fd.s3d6)}</p>
                             </li>
                             <li>
-                                <p>Contacto de prensa</p>
+                                <p>{fd&&(fd.s3d7)}</p>
                             </li>
                             <li>
-                                <p>Hazte con nuestras aplicaciones</p>
+                                <p>{fd&&(fd.s3d8)}</p>
                             </li>
                             <li>
-                                <p>Canjear tarjeta de regalo</p>
+                                <p>{fd&&(fd.s3d9)}</p>
                             </li>
                             <li>
-                                <p>Empleo</p>
+                                <p>{fd&&(fd.s3d10)}</p>
                             </li>
                         </ul>
                     </div>
                     <div className="footer-section cuenta">
-                        <h4>Cuenta</h4>
+                        <h4>{fd&&(fd.t4)}</h4>
                         <ul>
                             <li>
-                                <p>Crear cuenta</p>
+                                <p>{fd&&(fd.s4d1)}</p>
                             </li>
                             <li>
-                                <p>Acceder</p>
+                                <p>{fd&&(fd.s4d2)}</p>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div className="footer-bottom-wrapper">
-                <p>© Crunchyroll, LLC</p>
+                <p>{fd&&(fd.t5)}</p>
                 <div className="language-selector">
                     <div className={`content-wrapper ${langMenu?"is-open":""}`} onClick={()=>setLangMenu(!langMenu)}>
                         <div className="dropdown-arrow"/>
-                        <span>ESPAÑOL</span>
+                        <span>{fd&&(fd.esp1)}</span>
                     </div>
                     <div className={`language-dropdown ${langMenu?"is-visible":""}`}>
                         <div className="dropdown-scrollbar">
                             <div className="dropdown-content">
                                 <div className="language-option">
-                                    <span>Deutsch</span>
+                                    <span>{fd&&(fd.deu)}</span>
                                 </div>
                                 <div className="language-option">
-                                    <span>العربية</span>
+                                    <span>{fd&&(fd.ara)}</span>
                                 </div>
                                 <div className="language-option">
-                                    <span>English (US)</span>
+                                    <span>{fd&&(fd.eng)}</span>
                                 </div>
                                 <div className="language-option esp">
-                                    <span>Español</span>
+                                    <span>{fd&&(fd.esp2)}</span>
                                 </div>
                                 <div className="language-option">
-                                    <span>Español (España)</span>
+                                    <span>{fd&&(fd.esp3)}</span>
                                 </div>
                                 <div className="language-option">
-                                    <span>Français (France)</span>
+                                    <span>{fd&&(fd.fra)}</span>
                                 </div>
                                 <div className="language-option">
-                                    <span>Italiano</span>
+                                    <span>{fd&&(fd.ita)}</span>
                                 </div>
                                 <div className="language-option">
-                                    <span>Português (Brasil)</span>
+                                    <span>{fd&&(fd.por1)}</span>
                                 </div>
                                 <div className="language-option">
-                                    <span>Português (Portugal)</span>
+                                    <span>P{fd&&(fd.por2)}</span>
                                 </div>
                                 <div className="language-option">
-                                    <span>Русский</span>
+                                    <span>{fd&&(fd.rus)}</span>
                                 </div>
                                 <div className="language-option">
-                                    <span>Hindi (India)</span>
+                                    <span>{fd&&(fd.ind)}</span>
                                 </div>
                             </div>
                         </div>

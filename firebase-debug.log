@@ -1,0 +1,59 @@
+[debug] [2023-05-06T21:14:00.430Z] ----------------------------------------------------------------------
+[debug] [2023-05-06T21:14:00.435Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-05-06T21:14:00.436Z] CLI Version:   11.30.0
+[debug] [2023-05-06T21:14:00.436Z] Platform:      win32
+[debug] [2023-05-06T21:14:00.436Z] Node Version:  v19.6.0
+[debug] [2023-05-06T21:14:00.436Z] Time:          Sat May 06 2023 15:14:00 GMT-0600 (hora estándar central)
+[debug] [2023-05-06T21:14:00.437Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-06T21:14:00.574Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-06T21:14:00.575Z] > authorizing via signed-in user (mon21552@uvg.edu.gt)
+[debug] [2023-05-06T21:14:00.575Z] [iam] checking project crunchyroll-copy-56ec3 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-06T21:14:00.578Z] > refreshing access token with scopes: []
+[debug] [2023-05-06T21:14:00.581Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-05-06T21:14:00.581Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-06T21:14:01.156Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-05-06T21:14:01.156Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-05-06T21:14:01.174Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-copy-56ec3:testIamPermissions [none]
+[debug] [2023-05-06T21:14:01.174Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-copy-56ec3:testIamPermissions x-goog-quota-user=projects/crunchyroll-copy-56ec3
+[debug] [2023-05-06T21:14:01.174Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-copy-56ec3:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-06T21:14:01.628Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-copy-56ec3:testIamPermissions 200
+[debug] [2023-05-06T21:14:01.628Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-copy-56ec3:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-06T21:14:01.629Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/crunchyroll-copy-56ec3 [none]
+[debug] [2023-05-06T21:14:02.148Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/crunchyroll-copy-56ec3 200
+[debug] [2023-05-06T21:14:02.148Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/crunchyroll-copy-56ec3 {"projectId":"crunchyroll-copy-56ec3","projectNumber":"194514125882","displayName":"Crunchyroll Copy","name":"projects/crunchyroll-copy-56ec3","resources":{"hostingSite":"crunchyroll-copy-56ec3"},"state":"ACTIVE","etag":"1_5e05e452-fe6d-46cd-a53d-5582102bea96"}
+[debug] [2023-05-06T21:14:10.232Z] Error: Unable to find the next dep, try NPM installing?
+    at getConfig (C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:336:19)
+    at build (C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:60:46)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async prepareFrameworks (C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:193:108)
+    at async deploy (C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2023-05-06T21:17:48.654Z] ----------------------------------------------------------------------
+[debug] [2023-05-06T21:17:48.659Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-05-06T21:17:48.660Z] CLI Version:   11.30.0
+[debug] [2023-05-06T21:17:48.660Z] Platform:      win32
+[debug] [2023-05-06T21:17:48.660Z] Node Version:  v19.6.0
+[debug] [2023-05-06T21:17:48.660Z] Time:          Sat May 06 2023 15:17:48 GMT-0600 (hora estándar central)
+[debug] [2023-05-06T21:17:48.661Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-06T21:17:48.794Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-06T21:17:48.795Z] > authorizing via signed-in user (mon21552@uvg.edu.gt)
+[debug] [2023-05-06T21:17:48.795Z] [iam] checking project crunchyroll-copy-56ec3 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-06T21:17:48.799Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-copy-56ec3:testIamPermissions [none]
+[debug] [2023-05-06T21:17:48.800Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-copy-56ec3:testIamPermissions x-goog-quota-user=projects/crunchyroll-copy-56ec3
+[debug] [2023-05-06T21:17:48.800Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-copy-56ec3:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-06T21:17:49.164Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-copy-56ec3:testIamPermissions 200
+[debug] [2023-05-06T21:17:49.164Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/crunchyroll-copy-56ec3:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-06T21:17:49.166Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/crunchyroll-copy-56ec3 [none]
+[debug] [2023-05-06T21:17:49.545Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/crunchyroll-copy-56ec3 200
+[debug] [2023-05-06T21:17:49.545Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/crunchyroll-copy-56ec3 {"projectId":"crunchyroll-copy-56ec3","projectNumber":"194514125882","displayName":"Crunchyroll Copy","name":"projects/crunchyroll-copy-56ec3","resources":{"hostingSite":"crunchyroll-copy-56ec3"},"state":"ACTIVE","etag":"1_eb538ad6-58c1-4d77-8377-cb12231e0440"}
+[debug] [2023-05-06T21:17:58.736Z] Error: Unable to find the next dep, try NPM installing?
+    at getConfig (C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:336:19)
+    at build (C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\next\index.js:60:46)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async prepareFrameworks (C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\frameworks\index.js:193:108)
+    at async deploy (C:\Users\Andres\AppData\Roaming\npm\node_modules\firebase-tools\lib\deploy\index.js:55:13)
+[error] 
+[error] Error: An unexpected error has occurred.

@@ -4,3 +4,7 @@ module.exports ={
         formats: ['image/webp']
     },
 }
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    distDir: '.next',
+  };

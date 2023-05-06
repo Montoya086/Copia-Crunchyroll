@@ -12,7 +12,7 @@ import tt_white from "./footer_images/tt_blanco.png"
 import tt_gray from "./footer_images/tt_gris.png"
 import crown from "../images/crown.png"
 import crown_white from "./footer_images/crown_white.png"
-export default function Footer(){
+export default function Footer({fd}){
     const [ytHover, setYtHover] = useState(false)
     const [fbHover, setFbHover] = useState(false)
     const [twHover, setTwHover] = useState(false)
@@ -25,14 +25,14 @@ export default function Footer(){
             <div className="footer-top-wrapper">
                 <div className="footer-sections">
                     <div className="footer-section navigation">
-                        <h4>Navegación</h4>
+                        <h4>{fd.t1}</h4>
                         <ul>
-                            <li><p>Explorar lo más popular</p></li>
-                            <li><p>Explorar los Simulcasts</p></li>
-                            <li><p>Explorar Manga</p></li>
-                            <li><p>Calendario de lanzamientos</p></li>
-                            <li><p>Noticias</p></li>
-                            <li><p>Juegos</p></li>
+                            <li><p>{fd.s1d1}</p></li>
+                            <li><p>{fd.s1d2}</p></li>
+                            <li><p>{fd.s1d3}</p></li>
+                            <li><p>{fd.s1d4}</p></li>
+                            <li><p>{fd.s1d5}</p></li>
+                            <li><p>{fd.s1d6}</p></li>
                         </ul>
                     </div>
                     <div className="footer-section connect">

@@ -61,15 +61,56 @@ export async function getStaticProps(){
         card5: "Suzume: ¡Boletos ya a la venta!",
         card6: "The Quintessential Quintuplets Movie"
     }
-
+    const footerData={
+      t1: "Navegación",
+      s1d1:"Explorar lo más popular",
+      s1d2:"Explorar los Simulcasts",
+      s1d3:"Explorar Manga",
+      s1d4:"Calendario de lanzamientos",
+      s1d5:"Noticias",
+      s1d6:"Juegos",
+      t2:"Conecta con nosotros",
+      s2d1:"Youtube",
+      s2d2:"Facebook",
+      s2d3:"Twitter",
+      s2d4:"Instagram",
+      s2d5:"TikTok",
+      t3:"Crunchyroll",
+      s3d1:"Comienza tu Prueba Gratuita",
+      s3d2:"Acerca",
+      s3d3:"Ayuda/FAQ",
+      s3d4:"Términos de Uso",
+      s3d5:"Política de Privacidad",
+      s3d6:"Herramienta de aceptación de cookies",
+      s3d7:"Contacto de prensa",
+      s3d8:"Hazte con nuestras aplicaciones",
+      s3d9:"Canjear tarjeta de regalo",
+      s3d10:"Empleo",
+      t4:"Cuenta",
+      s4d1:"Crear cuenta",
+      s4d2:"Acceder",
+      t5:"© Crunchyroll, LLC",
+      esp1:"ESPAÑOL",
+      deu:"Deutsch",
+      ara:"العربية",
+      eng:"English (US)",
+      esp2:"Español",
+      esp3:"Español (España)",
+      fra:"Français (France)",
+      ita:"Italiano",
+      por1:"Português (Brasil)",
+      por2:"Português (Portugal)",
+      rus:"Русский",
+      ind:"Hindi (India)"
+    }
     return{
         props:{
-            mainPageData, imageSliderData
+            mainPageData, imageSliderData, footerData
         }
     }
 }
 
-function Index({mainPageData, imageSliderData}) {
+function Index({mainPageData, imageSliderData, footerData}) {
   const[logoHover, setLogoHover]=useState(false)
   const[explorarMenu, setExplorarMenu]=useState(false)
   const[noticiasMenu, setNoticiasMenu]=useState(false)
@@ -220,7 +261,9 @@ function Index({mainPageData, imageSliderData}) {
       </div>
       <div className="app-footer">
         <div className="app-footer-wrapper">
-            <Footer/>
+          {footerData&&(
+            <Footer fd={footerData}/>
+          )}
         </div>
       </div>
     </div>

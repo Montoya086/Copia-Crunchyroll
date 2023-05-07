@@ -11,6 +11,7 @@ import user from "./images/user.png"
 import premium_info from "./images/premium_info.png"
 import crown_black from "./images/crown_black.png"
 import Footer from "./components/Footer"
+import SeriesSlider from "./components/SeriesSlider"
 
 export async function getStaticProps(){
     const mainPageData = {
@@ -103,14 +104,18 @@ export async function getStaticProps(){
       rus:"Русский",
       ind:"Hindi (India)"
     }
+    const slider1Data={
+      title:"Muestra de la temporada de primavera 2023",
+      subtitle:"¡Disfruta gratis de los tres primeros episodios de estos simulcasts de primavera 2023!"
+    }
     return{
         props:{
-            mainPageData, imageSliderData, footerData
+            mainPageData, imageSliderData, footerData, slider1Data
         }
     }
 }
 
-function Index({mainPageData, imageSliderData, footerData}) {
+function Index({mainPageData, imageSliderData, footerData, slider1Data}) {
   const[logoHover, setLogoHover]=useState(false)
   const[explorarMenu, setExplorarMenu]=useState(false)
   const[noticiasMenu, setNoticiasMenu]=useState(false)
@@ -257,6 +262,7 @@ function Index({mainPageData, imageSliderData, footerData}) {
         <div className={`app-body-overlay ${(explorarMenu||noticiasMenu||userMenu) ? "is-fade" : ""}`} onClick={handleCloseAll}/>
         <div className="app-body-content">
           <ImageSlider imageSliderData={imageSliderData&&(imageSliderData)}/>
+          <SeriesSlider sd ={slider1Data} start="left"/>
         </div>
       </div>
       <div className="app-footer">

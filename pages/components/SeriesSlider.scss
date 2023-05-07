@@ -1,0 +1,99 @@
+@font-face {
+    font-family: "Nutmeg";
+    src: local("Nutmeg-Light"),
+      url("../fonts/Nutmeg-Light.ttf") format("truetype");
+  }
+@font-face {
+font-family: "Lato";
+src: local("Lato-Regular"),
+    url("../fonts/Lato-Light.ttf") format("truetype");
+}
+.series-container{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .header-wrapper{
+        box-sizing: border-box;
+        margin: 0;
+        min-width: 1050px;
+        color: white;
+        h2{
+            font-family: "Nutmeg";
+        }
+        p{
+            font-family: "Lato";
+            font-weight: 500;
+        }
+        .content-divisor{
+            margin-top: 0.75rem;
+            height: 0.25rem;
+            width: 100%;
+        }
+        .content-divisor.left{
+            background-image: linear-gradient(to left, #213944,#2abdbb);
+        }
+    }
+    .cards-carousel-container{
+        box-sizing: border-box;
+        .cards-carousel{
+            display: grid;
+            max-width: 1130px;
+            .cards-carousel-content-wrapper{
+                display: grid;
+                grid-area: content;
+                grid-template-areas: "viewbox";
+                grid-template-columns: minmax(0,auto);
+                position: relative;
+                width: 100%;
+                .cards-carousel-cards{
+                    grid-area: viewbox;
+                    box-sizing: border-box;
+                    display: block;
+                    .carousel-scroller{
+                        overflow: hidden;
+                        position: relative;
+                        z-index: 1;
+                        box-sizing: border-box;
+                        display: block;
+                        .carousel-scroller-wrapper{
+                            box-sizing: initial;
+                            padding: 25px;
+                            display: block;
+                            .carousel-scroller-track{
+                                display: grid;
+                                grid-auto-flow: column;
+                                overflow: auto;
+                                overscroll-behavior-x: none;
+                                .carousel-card-wrapper{
+                                    scroll-snap-align: start;
+                                    box-sizing: border-box;
+                                    display: block;
+                                    padding-top: 5px;
+                                    padding-bottom: 5px;
+                                    padding-left: 15px;
+                                    padding-right: 15px;
+                                    .carousel-card{
+                                        width: 150px;
+                                        height: 290px;
+                                        background-color: white;
+                                    }
+                                }
+                                &::-webkit-scrollbar-track {
+                                    background-color: transparent;
+                                }
+                                &::-webkit-scrollbar {
+                                    width: 0px;
+                                }
+                                &::-webkit-scrollbar-thumb {
+                                    background-color: transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -13,6 +13,7 @@ import premium_info from "./images/premium_info.png"
 import crown_black from "./images/crown_black.png"
 import Footer from "./components/Footer"
 import SeriesSlider from "./components/SeriesSlider"
+import cat from "./images/cat.png"
 import s1_1 from "./components/slider_images/series_1/s1_1.png"
 import s1_2 from "./components/slider_images/series_1/s1_2.png"
 import s1_3 from "./components/slider_images/series_1/s1_3.png"
@@ -158,15 +159,17 @@ export async function getStaticProps(){
         image: s1_12, title: "KamiKatsu: Working for God in a Godless World", type: "Serie", dob:"Sub | Dob"
       }
     ]
-
+    const bottomPageData={
+      d1: "¿Sigues buscando algo que ver?", d2: "Revisa todo nuestro catálogo", d3: "VER TODO"
+    }
     return{
         props:{
-            mainPageData, imageSliderData, footerData, slider1Data, slider1Info
+            mainPageData, imageSliderData, footerData, slider1Data, slider1Info, bottomPageData
         }
     }
 }
 
-function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1Info}) {
+function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1Info, bottomPageData}) {
   const[logoHover, setLogoHover]=useState(false)
   const[explorarMenu, setExplorarMenu]=useState(false)
   const[noticiasMenu, setNoticiasMenu]=useState(false)
@@ -318,6 +321,14 @@ function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1In
         <div className="app-body-content">
           <ImageSlider imageSliderData={imageSliderData&&(imageSliderData)}/>
           <SeriesSlider sd ={slider1Data} start="left" sinf={slider1Info}/>
+          <div className="bottom-page">
+            <Image alt="" src={cat} className="img"/>
+            <h3>{bottomPageData&&(bottomPageData.d1)}</h3>
+            <h3>{bottomPageData&&(bottomPageData.d2)}</h3>
+            <div className="bottom-page-button">
+              <p>{bottomPageData&&(bottomPageData.d3)}</p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="app-footer">

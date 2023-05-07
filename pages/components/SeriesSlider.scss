@@ -113,6 +113,7 @@ src: local("Lato-Regular"),
                                     padding-bottom: 5px;
                                     padding-left: 15px;
                                     padding-right: 15px;
+                                    cursor: pointer;
                                     .carousel-card{
                                         width: 150px;
                                         min-height: 290px;
@@ -155,6 +156,7 @@ src: local("Lato-Regular"),
                                             }
                                         }
                                     }
+                                    
                                 }
                                 &::-webkit-scrollbar-track {
                                     background-color: transparent;
@@ -164,6 +166,9 @@ src: local("Lato-Regular"),
                                 }
                                 &::-webkit-scrollbar-thumb {
                                     background-color: transparent;
+                                }
+                                .carousel-card-wrapper:hover{
+                                    background-color: #141519;
                                 }
                             }
                         }

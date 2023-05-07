@@ -14,6 +14,10 @@ import crown_black from "./images/crown_black.png"
 import Footer from "./components/Footer"
 import SeriesSlider from "./components/SeriesSlider"
 import cat from "./images/cat.png"
+import banner_1 from "./components/banner_images/banner_1.png"
+import banner_2 from "./components/banner_images/banner_2.png"
+import banner_3 from "./components/banner_images/banner_3.png"
+//s2
 import s1_1 from "./components/slider_images/series_1/s1_1.png"
 import s1_2 from "./components/slider_images/series_1/s1_2.png"
 import s1_3 from "./components/slider_images/series_1/s1_3.png"
@@ -39,6 +43,7 @@ import s2_9 from "./components/slider_images/series_2/s2_9.png"
 import s2_10 from "./components/slider_images/series_2/s2_10.png"
 import s2_11 from "./components/slider_images/series_2/s2_11.png"
 import s2_12 from "./components/slider_images/series_2/s2_12.png"
+import ImageBanner from "./components/ImageBanner"
 export async function getStaticProps(){
     const mainPageData = {
             explorar:"Explorar", 
@@ -375,8 +380,11 @@ function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1In
         <div className={`app-body-overlay ${(explorarMenu||noticiasMenu||userMenu) ? "is-fade" : ""}`} onClick={handleCloseAll}/>
         <div className="app-body-content">
           <ImageSlider imageSliderData={imageSliderData&&(imageSliderData)}/>
+          <ImageBanner src={banner_1}/>
           <SeriesSlider sd ={slider1Data} start="left" sinf={slider1Info}/>
+          <ImageBanner src={banner_2}/>
           <SeriesSlider sd ={slider2Data} start="right" sinf={slider2Info}/>
+          <ImageBanner src={banner_3}/>
           <div className="bottom-page">
             <Image alt="" src={cat} className="img"/>
             <h3>{bottomPageData&&(bottomPageData.d1)}</h3>

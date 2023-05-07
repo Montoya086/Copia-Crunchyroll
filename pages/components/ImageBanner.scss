@@ -1,0 +1,15 @@
+.image-banner{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    .image-banner-wrapper{
+        cursor: pointer;
+        width: 1050px;
+        height: 350px;
+        .img{
+            width: 100%;
+        }
+    }
+}

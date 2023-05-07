@@ -27,7 +27,7 @@ export default function SeriesSlider({sd, start, sinf}){
         <div className="series-container">
             <div className="header-wrapper">
                 <h2>{sd&&(sd.title)}</h2>
-                {sd.subtitle&&(<p>{sd&&(sd.subtitle)}</p>)}
+                <p>{sd&&(sd.subtitle)}</p>
                 <div className={`content-divisor ${start}`}/>
             </div>
             <div className="cards-carousel-container">

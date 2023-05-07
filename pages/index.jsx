@@ -7,6 +7,7 @@ import crown from "./images/crown.png"
 import search from "./images/search.png"
 import lists from "./images/list.png"
 import user from "./images/user.png"
+import Head from "next/head"
 //import testImage from "./images/test.png"
 import premium_info from "./images/premium_info.png"
 import crown_black from "./images/crown_black.png"
@@ -127,6 +128,10 @@ function Index({mainPageData, imageSliderData, footerData, slider1Data}) {
     setUserMenu(false)
   }
   return (
+    <>
+    <Head>
+      <title>Crunchyroll - Disfruta del anime más popular y lee manga online</title>
+    </Head>
     <div className="content-app">
       <div className="header-container">
         <nav className="header">
@@ -273,6 +278,7 @@ function Index({mainPageData, imageSliderData, footerData, slider1Data}) {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

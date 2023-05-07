@@ -13,7 +13,18 @@ import premium_info from "./images/premium_info.png"
 import crown_black from "./images/crown_black.png"
 import Footer from "./components/Footer"
 import SeriesSlider from "./components/SeriesSlider"
-
+import s1_1 from "./components/slider_images/series_1/s1_1.png"
+import s1_2 from "./components/slider_images/series_1/s1_2.png"
+import s1_3 from "./components/slider_images/series_1/s1_3.png"
+import s1_4 from "./components/slider_images/series_1/s1_4.png"
+import s1_5 from "./components/slider_images/series_1/s1_5.png"
+import s1_6 from "./components/slider_images/series_1/s1_6.png"
+import s1_7 from "./components/slider_images/series_1/s1_7.png"
+import s1_8 from "./components/slider_images/series_1/s1_8.png"
+import s1_9 from "./components/slider_images/series_1/s1_9.png"
+import s1_10 from "./components/slider_images/series_1/s1_10.png"
+import s1_11 from "./components/slider_images/series_1/s1_11.png"
+import s1_12 from "./components/slider_images/series_1/s1_12.png"
 export async function getStaticProps(){
     const mainPageData = {
             explorar:"Explorar", 
@@ -109,14 +120,53 @@ export async function getStaticProps(){
       title:"Muestra de la temporada de primavera 2023",
       subtitle:"¡Disfruta gratis de los tres primeros episodios de estos simulcasts de primavera 2023!"
     }
+    const slider1Info=[
+      {
+        image: s1_1, title: "Hell's Paradise", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_2, title: "MASHLE: MAGIC AND MUSCLES", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_3, title: "The Legendary Hero is Dead!", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_4, title: "A Galaxy Next Door", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_5, title: "Dead Mount Death Play", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_6, title: "My One-Hit Kill Sister", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_7, title: "Sacrificial Princess and the King of Beasts", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_8, title: "Skip and Loafer", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_9, title: "The Aristocrat’s Otherworldly Adventure: Serving Gods Who Go Too Far", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_10, title: "The Café Terrace and Its Goddesses", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_11, title: "Why Raeliana Ended Up at the Duke's Mansion", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s1_12, title: "KamiKatsu: Working for God in a Godless World", type: "Serie", dob:"Sub | Dob"
+      }
+    ]
+
     return{
         props:{
-            mainPageData, imageSliderData, footerData, slider1Data
+            mainPageData, imageSliderData, footerData, slider1Data, slider1Info
         }
     }
 }
 
-function Index({mainPageData, imageSliderData, footerData, slider1Data}) {
+function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1Info}) {
   const[logoHover, setLogoHover]=useState(false)
   const[explorarMenu, setExplorarMenu]=useState(false)
   const[noticiasMenu, setNoticiasMenu]=useState(false)
@@ -267,7 +317,7 @@ function Index({mainPageData, imageSliderData, footerData, slider1Data}) {
         <div className={`app-body-overlay ${(explorarMenu||noticiasMenu||userMenu) ? "is-fade" : ""}`} onClick={handleCloseAll}/>
         <div className="app-body-content">
           <ImageSlider imageSliderData={imageSliderData&&(imageSliderData)}/>
-          <SeriesSlider sd ={slider1Data} start="left"/>
+          <SeriesSlider sd ={slider1Data} start="left" sinf={slider1Info}/>
         </div>
       </div>
       <div className="app-footer">

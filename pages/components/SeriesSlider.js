@@ -1,6 +1,6 @@
 import React from "react"
-
-export default function SeriesSlider({sd, start}){
+import Image from "next/image"
+export default function SeriesSlider({sd, start, sinf}){
     return(
         <div className="series-container">
             <div className="header-wrapper">
@@ -16,51 +16,26 @@ export default function SeriesSlider({sd, start}){
                             <div className="carousel-scroller">
                                 <div className="carousel-scroller-wrapper">
                                     <div className="carousel-scroller-track">
-                                        <div className="carousel-card-wrapper">
-                                            <div className="carousel-card">
-
-                                            </div>
-                                        </div>
-                                        <div className="carousel-card-wrapper">
-                                            <div className="carousel-card">
-
-                                            </div>
-                                        </div>
-                                        <div className="carousel-card-wrapper">
-                                            <div className="carousel-card">
-
-                                            </div>
-                                        </div>
-                                        <div className="carousel-card-wrapper">
-                                            <div className="carousel-card">
-
-                                            </div>
-                                        </div>
-                                        <div className="carousel-card-wrapper">
-                                            <div className="carousel-card">
-
-                                            </div>
-                                        </div>
-                                        <div className="carousel-card-wrapper">
-                                            <div className="carousel-card">
-
-                                            </div>
-                                        </div>
-                                        <div className="carousel-card-wrapper">
-                                            <div className="carousel-card">
-
-                                            </div>
-                                        </div>
-                                        <div className="carousel-card-wrapper">
-                                            <div className="carousel-card">
-
-                                            </div>
-                                        </div>
-                                        <div className="carousel-card-wrapper">
-                                            <div className="carousel-card">
-
-                                            </div>
-                                        </div>
+                                        {sinf&&(
+                                            <>
+                                                {sinf.map(card=>(
+                                                    <div className="carousel-card-wrapper">
+                                                        <div className="carousel-card">
+                                                            <div className="carousel-image">
+                                                                {card&&(<Image alt="" className="img" src={card&&(card.image)}/>)}
+                                                            </div>
+                                                            <div className="carousel-info">
+                                                                <p className="card-title">{card&&(card.title)}</p>
+                                                                <div className="serie-state">
+                                                                    <p className="type">{card&&(card.type)}</p>
+                                                                    <p className="sub-dub">{"♦ "+ card&&(card.dob)}</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </>
+                                        )}
                                     </div>
                                 </div>
                             </div>

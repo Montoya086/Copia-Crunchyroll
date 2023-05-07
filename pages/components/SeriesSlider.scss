@@ -34,6 +34,9 @@ src: local("Lato-Regular"),
         .content-divisor.left{
             background-image: linear-gradient(to left, #213944,#2abdbb);
         }
+        .content-divisor.right{
+            background-image: linear-gradient(to left, #fab818,#ef4323);
+        }
     }
     .cards-carousel-container{
         box-sizing: border-box;

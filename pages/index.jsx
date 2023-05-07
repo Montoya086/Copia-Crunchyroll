@@ -26,6 +26,19 @@ import s1_9 from "./components/slider_images/series_1/s1_9.png"
 import s1_10 from "./components/slider_images/series_1/s1_10.png"
 import s1_11 from "./components/slider_images/series_1/s1_11.png"
 import s1_12 from "./components/slider_images/series_1/s1_12.png"
+//s2
+import s2_1 from "./components/slider_images/series_2/s2_1.png"
+import s2_2 from "./components/slider_images/series_2/s2_2.png"
+import s2_3 from "./components/slider_images/series_2/s2_3.png"
+import s2_4 from "./components/slider_images/series_2/s2_4.png"
+import s2_5 from "./components/slider_images/series_2/s2_5.png"
+import s2_6 from "./components/slider_images/series_2/s2_6.png"
+import s2_7 from "./components/slider_images/series_2/s2_7.png"
+import s2_8 from "./components/slider_images/series_2/s2_8.png"
+import s2_9 from "./components/slider_images/series_2/s2_9.png"
+import s2_10 from "./components/slider_images/series_2/s2_10.png"
+import s2_11 from "./components/slider_images/series_2/s2_11.png"
+import s2_12 from "./components/slider_images/series_2/s2_12.png"
 export async function getStaticProps(){
     const mainPageData = {
             explorar:"Explorar", 
@@ -162,14 +175,56 @@ export async function getStaticProps(){
     const bottomPageData={
       d1: "¿Sigues buscando algo que ver?", d2: "Revisa todo nuestro catálogo", d3: "VER TODO"
     }
+    const slider2Data={
+      title:"¡Anime que puedes mirar gratis!",
+      subtitle:"¡Disfruta aquí de algunos de nuestros títulos más populares!"
+    }
+    const slider2Info=[
+      {
+        image: s2_1, title: "JUJUTSU KAISEN", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_2, title: "One Piece", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_3, title: "Hunter x Hunter", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_4, title: "SPY x FAMILY", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_5, title: "My Hero Academia", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_6, title: "The Quintessential Quintuplets (Go-Toubun no Hanayome)", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_7, title: "BORUTO: NARUTO NEXT GENERATIONS", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_8, title: "Attack on Titan", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_9, title: "JoJo no Kimyō na Bōken", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_10, title: "Black Clover", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_11, title: "Nisekoi", type: "Serie", dob:"Sub | Dob"
+      },
+      {
+        image: s2_12, title: "Haikyu!!", type: "Serie", dob:"Sub | Dob"
+      },
+    ]
     return{
         props:{
-            mainPageData, imageSliderData, footerData, slider1Data, slider1Info, bottomPageData
+            mainPageData, imageSliderData, footerData, slider1Data, slider1Info, bottomPageData, slider2Data,slider2Info
         }
     }
 }
 
-function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1Info, bottomPageData}) {
+function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1Info, bottomPageData, slider2Data,slider2Info}) {
   const[logoHover, setLogoHover]=useState(false)
   const[explorarMenu, setExplorarMenu]=useState(false)
   const[noticiasMenu, setNoticiasMenu]=useState(false)
@@ -321,6 +376,7 @@ function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1In
         <div className="app-body-content">
           <ImageSlider imageSliderData={imageSliderData&&(imageSliderData)}/>
           <SeriesSlider sd ={slider1Data} start="left" sinf={slider1Info}/>
+          <SeriesSlider sd ={slider2Data} start="right" sinf={slider2Info}/>
           <div className="bottom-page">
             <Image alt="" src={cat} className="img"/>
             <h3>{bottomPageData&&(bottomPageData.d1)}</h3>

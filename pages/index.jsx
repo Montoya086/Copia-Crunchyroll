@@ -14,6 +14,7 @@ import crown_black from "./images/crown_black.png"
 import Footer from "./components/Footer"
 import SeriesSlider from "./components/SeriesSlider"
 import cat from "./images/cat.png"
+//banner
 import banner_1 from "./components/banner_images/banner_1.png"
 import banner_2 from "./components/banner_images/banner_2.png"
 import banner_3 from "./components/banner_images/banner_3.png"
@@ -43,6 +44,12 @@ import s2_9 from "./components/slider_images/series_2/s2_9.png"
 import s2_10 from "./components/slider_images/series_2/s2_10.png"
 import s2_11 from "./components/slider_images/series_2/s2_11.png"
 import s2_12 from "./components/slider_images/series_2/s2_12.png"
+//card
+import card_1 from "./components/card_images/card_1.png"
+import card_2 from "./components/card_images/card_2.png"
+import card_3 from "./components/card_images/card_3.png"
+import card_4 from "./components/card_images/card_4.png"
+//elements
 import ImageBanner from "./components/ImageBanner"
 import FeedCard from "./components/FeedCard"
 export async function getStaticProps(){
@@ -223,14 +230,29 @@ export async function getStaticProps(){
         image: s2_12, title: "Haikyu!!", type: "Serie", dob:"Sub | Dob"
       },
     ]
+    const feedCardData={
+      goto:"IR A LA SERIE", start:"COMENZAR A VER T1 E1", add:"AÑADIR A MI LISTA"
+    }
+    const feedCard1Info={
+      image: card_1, title: "Keep Your Hands Off Eizouken!", type: "Serie", dob:"Sub | Dob", desc:"Midori Asakusa es una estudiante de primero de instituto/preparatoria que adora el anime. Aunque se pasa los días dibujando todas las ideas que tiene, todavía no ha dado el primer paso para crear uno de sus amados animes, y es que sabe que es un objetivo imposible si está ella sola. La primera en descubrir el talento de Asakusa es Sayaka Kanamori, una chica con aspiraciones a ser productora. No tardan mucho en descubrir que una compañera de su clase, la carismática modelo Tsubame Mizusaki, en realidad tiene alma de animadora, así que juntas crean un club de animación."
+    }
+    const feedCard2Info={
+      image: card_2, title: "Haikyu!!", type: "Serie", dob:"Subtitulado", desc:"Basada en el manga original de Haruichi Furudate, el cual se publica en la Weekly Shonen Jump, Haikyu!! es un anime deportivo protagonizado por Shoyo Hinata y su amor por el voleibol. Siendo de corta estatura, le inspira un jugador al que llamaban el \"Pequeño Gigante\", y decide jugar tal y como lo hizo él. En su último año de secundaria por fin consigue jugar su primer partido oficial, pero es derrotado por completo por el equipo rival y su mejor jugador, \"El rey de la cancha\", Tobio Kageyama. Ya en preparatoria, Hinata se inscribe en la misma escuela en la que jugaba Tobio y..."
+    }
+    const feedCard3Info={
+      image: card_3, title: "TONIKAWA: Over The Moon For You", type: "Serie", dob:"Sub | Dob", desc:"Una comedia de vida matrimonial obra de Kenjiro Hata, autor de \"Hayate the Comat Butler\" y que ¡al fin da el salto al anime! Nasa Yuzaki se enamora a primera vista tras conocer a la misteriosa Tsukasa. Cuando Nasa reúne valor para declararle lo que siente, la respuesta de la chica le sorprende: \"Saldré contigo, pero solo si nos casamos\". ¡La entrañable vida de casados de Nasa y Tsukasa está a punto de comenzar!"
+    }
+    const feedCard4Info={
+      image: card_4, title: "Bananya", type: "Serie", dob:"Subtitulado", desc:"Las bananas ocultan un secreto: cuando nadie las mira, de su interior salen lindos gatitos que pasean y juegan por las casa. Bananya es uno de estos gatitos."
+    }
     return{
         props:{
-            mainPageData, imageSliderData, footerData, slider1Data, slider1Info, bottomPageData, slider2Data,slider2Info
+            mainPageData, imageSliderData, footerData, slider1Data, slider1Info, bottomPageData, slider2Data,slider2Info,feedCardData,feedCard1Info,feedCard2Info,feedCard3Info,feedCard4Info
         }
     }
 }
 
-function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1Info, bottomPageData, slider2Data,slider2Info}) {
+function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1Info, bottomPageData, slider2Data,slider2Info,feedCardData,feedCard1Info,feedCard2Info,feedCard3Info,feedCard4Info}) {
   const[logoHover, setLogoHover]=useState(false)
   const[explorarMenu, setExplorarMenu]=useState(false)
   const[noticiasMenu, setNoticiasMenu]=useState(false)
@@ -383,9 +405,12 @@ function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1In
           <ImageSlider imageSliderData={imageSliderData&&(imageSliderData)}/>
           <ImageBanner src={banner_1}/>
           <SeriesSlider sd ={slider1Data} start="left" sinf={slider1Info}/>
-          <FeedCard/>
+          <FeedCard data={feedCardData} info={feedCard1Info}/>
           <ImageBanner src={banner_2}/>
           <SeriesSlider sd ={slider2Data} start="right" sinf={slider2Info}/>
+          <FeedCard data={feedCardData} info={feedCard2Info}/>
+          <FeedCard data={feedCardData} info={feedCard3Info}/>
+          <FeedCard data={feedCardData} info={feedCard4Info}/>
           <ImageBanner src={banner_3}/>
           <div className="bottom-page">
             <Image alt="" src={cat} className="img"/>

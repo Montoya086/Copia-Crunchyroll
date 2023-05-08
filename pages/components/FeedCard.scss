@@ -1,0 +1,140 @@
+@font-face {
+    font-family: "Lato";
+    src: local("Lato-Regular"),
+      url("../fonts/Lato-Regular.ttf") format("truetype");
+  }
+  @font-face {
+    font-family: "Nutmeg";
+    src: local("Nutmeg-Light"),
+      url("../fonts/Nutmeg-Light.ttf") format("truetype");
+  }
+.feed-card{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+    .content-wrapper{
+        max-width: 1050px;
+        .card-wrapper{
+            display: flex;
+            .image-wrapper{
+                width: 420px;
+                height: 236px;
+                position: relative;
+                .img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .text-image{
+                    position: absolute;
+                    top:40%;
+                    left:40%;
+                    color: white;
+                    font-size: 14px;
+                    font-family: "Lato";
+                    font-weight: 600;
+                    visibility: hidden;
+                }
+            }
+            .image-wrapper:hover{
+                .img{
+                    transition: filter 0.3s ease;
+                    filter: brightness(0.4);
+                }
+                .text-image{
+                    visibility: visible;
+                }
+            }
+            .info-wrapper{
+                margin-left: 25px;
+                width: 630px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                h4{
+                    color: white;
+                    font-family: "Nutmeg";
+                    font-weight: 600;
+                    font-size: 1.75rem;
+                    margin: 0;
+                }
+                .tags{
+                    display: flex;
+                    flex-direction: row;
+                    font-family: "Lato";
+                    .type{
+                        font-size: 13px;
+                        color: #2abdbb;
+                    }
+                    .sub{
+                        margin-left: 5px;
+                        font-size: 13px;
+                        color: #a0a0a0;
+                    }
+                }
+                .description{
+                    margin: 0;
+                    margin-bottom: 25px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    white-space: unset;
+
+                    color: white;
+                    font-family: "Lato";
+                }
+                .buttons-wrapper{
+                    display: flex;
+                    font-family: "Lato";
+                    font-weight: 600;
+                    .start{
+                        display: flex;
+                        background-color: #f47521;
+                        color: black;
+                        padding-top: 7px;
+                        padding-bottom: 5px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        margin-right: 5px;
+                        cursor: pointer;
+                        p{
+                            margin:0;
+                        }
+                        .img{
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                    .add{
+                        cursor: pointer;
+                        display: flex;
+                        color: #f47521;
+                        border: #f47521 solid 2px;
+                        padding-top: 5px;
+                        padding-bottom: 5px;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        margin-left: 5px;
+                        p{
+                            margin:0;
+                        }
+                        .img{
+                            width: 24px;
+                            height: 24px;
+                        }
+                    }
+                    .add:hover{
+                        transition: filter 0.3s ease;
+                        filter: contrast(50%) brightness(1.3);
+                    }
+                    .start:hover{
+                        transition: filter 0.3s ease;
+                        filter: contrast(50%) brightness(1.2);
+                    }
+                }
+            }
+        }
+    }
+}

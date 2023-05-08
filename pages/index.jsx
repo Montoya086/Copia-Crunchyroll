@@ -44,6 +44,7 @@ import s2_10 from "./components/slider_images/series_2/s2_10.png"
 import s2_11 from "./components/slider_images/series_2/s2_11.png"
 import s2_12 from "./components/slider_images/series_2/s2_12.png"
 import ImageBanner from "./components/ImageBanner"
+import FeedCard from "./components/FeedCard"
 export async function getStaticProps(){
     const mainPageData = {
             explorar:"Explorar", 
@@ -382,6 +383,7 @@ function Index({mainPageData, imageSliderData, footerData, slider1Data,slider1In
           <ImageSlider imageSliderData={imageSliderData&&(imageSliderData)}/>
           <ImageBanner src={banner_1}/>
           <SeriesSlider sd ={slider1Data} start="left" sinf={slider1Info}/>
+          <FeedCard/>
           <ImageBanner src={banner_2}/>
           <SeriesSlider sd ={slider2Data} start="right" sinf={slider2Info}/>
           <ImageBanner src={banner_3}/>

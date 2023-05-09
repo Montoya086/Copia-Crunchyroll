@@ -52,7 +52,7 @@ import card_4 from "./components/card_images/card_4.png"
 //elements
 import ImageBanner from "./components/ImageBanner"
 import FeedCard from "./components/FeedCard"
-export async function getStaticProps(){
+export async function getServerSideProps(){
     const mainPageData = {
             explorar:"Explorar", 
             popular:"Popular",
